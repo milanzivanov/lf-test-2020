@@ -14,6 +14,11 @@ html {
     list-style: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .wrapper-inner {
     max-width: 1170px;
     margin: 0 auto;
