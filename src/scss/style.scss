@@ -1,0 +1,49 @@
+@import "global";
+@import "mixins";
+@import "header";
+@import "footer";
+@import "colors";
+@import "typography";
+@import "icons";
+@import "fonts";
+
+
+body {
+    font-size: 25px;
+    height: 100vh;
+    font-family: "Roboto" sans-serif;
+}
+
+.container {
+    position: relative;
+    background: url("./../src/img/landingPage.png");
+    // background-color: #12202d;
+    background-size: cover;
+    height: 100vh;
+    @include flexCHV;
+     
+    h1 {
+        position: relative;
+        z-index: 5;
+        color: yellow;
+    }
+}
+
+.container::before {
+    position: absolute;
+    content: '';
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    // background-color: #56bcbb;
+    background-color: rgba(86, 188, 187, 0.8);
+    width: 100%;
+    height: 100%;
+}
+.container::after {
+    position: absolute;
+    content: '';
+    // background-color: #12202d;
+    background-color: rgba(18, 32, 45, 0.6);
+
+    width: 100%;
+    height: 100%;
+}
