@@ -14,12 +14,16 @@ html {
     list-style: none;
 }
 
+.wrapper-inner {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
 img {
     max-width: 100%;
     height: auto;
 }
 
-.wrapper-inner {
-    max-width: 1170px;
-    margin: 0 auto;
+.color-white {
+    color: #fff !important;
 }

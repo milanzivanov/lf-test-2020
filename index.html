@@ -3,68 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>starter-2020</title>
+    <title>LF fe test</title>
     <link rel="shortcut icon" type="image/ico" href="./favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
     
     <div class="main">
 
-        <section class="container" id="page1">
+        <!-- landing page -->
+        <section class="landing-page-container" id="page1">
 
-            <header class="header-login">
-                <div class="header-login__btn">
-                    login
-                </div>
-            </header>
+            <div class="wrapper-inner">
+                <header class="header-login">
+                    <a hred="#" class="header-login__btn">
+                        login
+                    </a>
+                </header>            
+            </div>
 
-            <h1>
+            <h1 class="main-heading">
                 <img src="./src/img/harpoon.png" alt="harpoon ventures main heder">
             </h1>
-            <!-- <svg class="svg__icon">
-                <use xlink:href="./src/img/sprites.svg#icon-shopping-cart"></use>
-            </svg> -->
 
             <div class="more-info">
                 <p>partners@harpoon.vc</p>
                 <h2>Melo park, ca</h2>
                 <div class="more-info__arrd">
-                    V
+                    <!-- <svg class="svg__icon">
+                        <use xlink:href="./src/img/sprites.svg#icon-shopping-cart"></use>
+                    </svg> -->
+                    <a href="#">
+                        <i class="arrow down"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- about us section -->
         <section id="page2">
-            <h1>2</h1>
-          </section>
+            <div class="section-box about-us">
+
+                <div class="wrapper-inner">
+                    <h2 class="border-bottom">about us</h2>
+
+                    <div class="about-us__box">
+    
+                        <div class="about-us--item">
+                            <div class="wrapper-inner">
+                                <h2>"harpoon ventures is building a portfolio of top-tier early stage startaps."</h2>
+                                <p>
+                                    Harpoon Ventures is building a portfolio of top-tier early stage startups and helping them win them multi-million-dollar unconventional government contracts in support of elite national security units. Our team brings an unparalleled combination of top-tier Silicon Valley venture capital experience together with deep domain knowledge in government, special operations, and intelligence.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about-us--item">
+                            <div class="wrapper-inner">
+                                <div class="about-us-item-container">
+                                    <div class="about-us-item-container__item">
+                                    </div>
+                                    <div class="about-us-item-container__item">
+                                        &nbsp;
+                                    </div>
+                                    <div class="about-us-item-container__item">
+                                        &nbsp;
+                                    </div>
+                                    <div class="about-us-item-container__item">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- our portfolio -->
+        <section id="page3">
+            <div class="section-box portfolio">                    
+                <div class="wrapper-inner">
+                    <h2 class="border-bottom color-white">our portfolio</h2>
+
+                    <div class="portfolio-box">
+                        <div class="portfolio-box__item">
+                            <img src="./src/img/elroy.png" alt="elroy air logo">
+                        </div>
+                        <div class="portfolio-box__item">
+                            <img src="./src/img/edgybees.png" alt="edgbees logo">
+                        </div>
+                        <div class="portfolio-box__item">
+                            <img src="./src/img/planck.png" alt="planck logo">
+                        </div>
+                        <div class="portfolio-box__item">
+                            <img src="./src/img/lookngglass.png" alt="look ng glass logo">
+                        </div>
+                    </div>
+
+                    <div class="portfolio-box-bottom">
+                        <h2>"this portfolio was constructed in less than 1 month"</h2>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         
-          <section id="page3">
-            <h1>3</h1>
-          </section>
+        <!-- our advisors -->
+        <section id="page4">
+            <div class="section-box advisors">                    
+                <div class="wrapper-inner">
+                    <h2 class="border-bottom">our advisors</h2>
+                </div>
+            </div>
+        </section>
         
-          <section id="page4">
-            <h1>4</h1>
-          </section>
-        
-          <section id="page5">
-            <h1>5</h1>
-          </section>
+        <!-- our investors -->
+        <section id="page5">
+            <div class="section-box investors">                  
+                <div class="wrapper-inner">
+                    <h2 class="border-bottom color-white">our investors</h2>
+                </div>
+            </div>
+        </section>
 
     </div>
       
     <ul id="pagination">
-    <li><a href="#page1"></a></li>
-    <li><a href="#page2"></a></li>
-    <li><a href="#page3"></a></li>
-    <li><a href="#page4"></a></li>
-    <li><a href="#page5"></a></li>
+        <li><a href="#page1"></a></li>
+        <li><a href="#page2"></a></li>
+        <li><a href="#page3"></a></li>
+        <li><a href="#page4"></a></li>
+        <li><a href="#page5"></a></li>
     </ul>
 
-    <div class="footer">
-        <p>copyright2020</p>
-    </div>
+    <footer class="footer">
+        <p>
+            <strong>Copyright Harpoon Ventures 2018. All rights Reserved</strong>
+        </p>
+    </footer>
 
 
     <script src="./node_modules/jquery/dist/jquery.js"></script>
