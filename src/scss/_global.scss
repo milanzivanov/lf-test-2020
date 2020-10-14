@@ -11,12 +11,26 @@ html {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
 }
+
+
+// helper utilites classess
 
 .wrapper-inner {
     max-width: 1170px;
     margin: 0 auto;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.pb-1 {
+    padding-bottom: 1em !important;
 }
 
 img {
@@ -24,6 +38,35 @@ img {
     height: auto;
 }
 
-.color-white {
-    color: #fff !important;
+.btn {
+    position: relative;
+    z-index: 5;
+    font-family: futurastd-light,sans-serif;
+    color: #fff;
+    border: 2px solid $lBlue;
+    letter-spacing: 1px;
+    background-color: transparent;
+    padding: 1.2em 5.6em;
+    font-size: .8rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.heading-h2 {
+    position: relative;
+    z-index: 5;
+    font-family: 'futura-condensedbold';
+    color: $h1-color;
+    text-transform: uppercase;
+    font-size: 2.9rem;
+}
+
+.heading-h2-white {
+    color: $bgColor;
+}
+
+.rounded {
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
 }

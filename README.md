@@ -18,4 +18,6 @@ In this proejct, Gulp is configured to run the following functions:
 * Concatenate the JS files
 * Uglify the JS files
 * Move final CSS and JS files to the `/dist` folder
+
+[Link preview](http://lbtest2020.surge.sh/)
  
