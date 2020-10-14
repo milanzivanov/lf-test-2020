@@ -17,6 +17,7 @@ body {
     .landing-page-container {
         position: relative;
         background: url("./../src/img/landingPage.jpg");
+        background: url("./../src/img/landingPage.webp");
         background-size: cover;
         height: 100vh;
 
@@ -92,8 +93,11 @@ body {
             flex-direction: column;
 
             p {
-                font-size: 1.5rem;
                 padding-bottom: .7em;
+                a {
+                    color: #fff;
+                    font-size: 1.5rem;
+                }
             }
 
             h2 {
@@ -166,7 +170,7 @@ body {
 }
 
 /////////////////////
-// section box heading 
+// section box heading  ????? better naming
 .section-box {
     position: relative;
     width: 100%;
@@ -195,9 +199,8 @@ body {
 
 //////////////////
 // about us
-
 .about-us {
-    height: 100vh;
+    padding-bottom: 6em;
 }
 
 .about-us__box {
@@ -277,6 +280,7 @@ body {
 .portfolio {
     position: relative;
     background: url("./../src/img/portfolio-bg-color.jpg");
+    background: url("./../src/img/portfolio-bg-color.webp");
     background-size: cover;
 }
 
@@ -310,7 +314,6 @@ body {
                display: inline-block;
                color: $lBlue;
                padding: 0;
-               text-transform: uppercase;
            }
         }
 
@@ -350,8 +353,7 @@ body {
 
 h2.advisor-top-header {
     width: 70%;
-    padding: 1em 0 1.5em 0;
-    font-size: 3rem;
+    padding: 0 0 1.5em 0;
 }
 
 .advisors-box {
@@ -410,7 +412,6 @@ h2.advisor-top-header {
     position: relative;
     background: url("./../src/img/investors-bg.jpg");
     background-size: cover;
-    height: 100vh;
 
     &::before {
         position: absolute;
@@ -427,14 +428,6 @@ h2.advisor-top-header {
         z-index: 5;
 
         .investors-confirmed {
-            h3 {
-                // helper
-                font-family: 'futurastd-light', sans-serif;
-                color: $lBlue;
-                padding-bottom: 1em;
-                text-transform: capitalize;
-                font-size: 1.2em;;
-            }
 
             img {
                 padding-bottom: 1em;;
@@ -442,14 +435,6 @@ h2.advisor-top-header {
         }
         
         .investors-in-talks {
-            h3 {
-                // helper
-                font-family: 'futurastd-light', sans-serif;
-                color: $lBlue;
-                padding-bottom: 1em;
-                text-transform: capitalize;
-                font-size: 1.2em;
-            }
 
             .investors-in-talks__box {
                 display: flex;

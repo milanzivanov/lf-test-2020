@@ -6,6 +6,8 @@
     <title>LF fe test</title>
     <link rel="shortcut icon" type="image/ico" href="./favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
@@ -18,18 +20,25 @@
 
             <div class="wrapper-inner">
                 <header class="header-login">
-                    <a hred="#" class="btn header-login__btn">
+                    <a href="#" class="btn header-login__btn">
                         login
                     </a>
                 </header>            
             </div>
 
-            <h1 class="main-heading">
-                <img src="./src/img/harpoon.png" alt="harpoon ventures main heder">
+            <h1 class="main-heading" data-aos="fade-right">
+                <a href="http://milanzivanov.com" target="_blank" rel="noopener noreferrer">
+                    <picture>
+                        <source srcset="./src/img/harpoon.webp">
+                        <img src="./src/img/harpoon.png" alt="harpoon ventures main heder">
+                    </picture>
+                </a>
             </h1>
 
             <div class="more-info">
-                <p>partners@harpoon.vc</p>
+                <p>
+                    <a href="mailto:partners@harpoon.vc">partners@harpoon.vc</a>                  
+                </p>
                 <h2>Melo park, ca</h2>
                 <div class="more-info__arrd">
                     <a href="#">
@@ -45,7 +54,7 @@
         <!-- //////////////////// -->
         <!-- about us section -->
         <section id="page2">
-            <div class="section-box about-us">
+            <div class="section-box about-us pb-6">
 
                 <div class="wrapper-inner">
                     <h2 class="border-bottom heading-h2">about us</h2>
@@ -80,7 +89,6 @@
                     </div>
 
                 </div>
-
 
             </div>
         </section>
@@ -225,7 +233,7 @@
         <!-- //////////////////// -->
         <!-- our investors -->
         <section id="page5">
-            <div class="section-box investors">                  
+            <div class="section-box investors pb-5">                 
                 <div class="wrapper-inner">
                     <h2 class="border-bottom heading-h2 heading-h2-white">our investors</h2>
 
@@ -236,11 +244,11 @@
                     <div class="investors-box">
                         
                         <div class="investors-confirmed">
-                            <h3>confirmed</h3>
+                            <h3 class="heading-h3">confirmed</h3>
                             <img src="./src/img/lightspeed.png" alt="lightspeed logo">
                         </div>
                         <div class="investors-in-talks">
-                            <h3>in talks</h3>
+                            <h3 class="heading-h3">in talks</h3>
                             <div class="investors-in-talks__box">
                                 <div class="investors-in-talks__box--item">
                                     <img src="./src/img/sequoia.png" alt="sequoia logo">
@@ -253,16 +261,13 @@
 
                     </div>
 
-
-
-
-
                 </div>
             </div>
         </section>
 
     </div>
-      
+    
+    <!-- scroll pagination -->
     <ul id="pagination">
         <li><a href="#page1"></a></li>
         <li><a href="#page2"></a></li>
@@ -277,6 +282,7 @@
         </p>
     </footer>
 
+    <!-- /////////// -->
     <!-- js -->
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script
@@ -284,6 +290,7 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./dist/main.js"></script>
 </body>
 </html>

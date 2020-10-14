@@ -38,3 +38,6 @@ $(document).ready(function() {
 
     
 });
+
+// animation on scroll
+AOS.init();
