@@ -86,31 +86,31 @@ body {
             position: relative;
             z-index: 5;
             padding-bottom: 1em;
-            color: #fff;
             font-family: 'futura-condensedbold', sans-serif;
 
             @include flexCHV;
             flex-direction: column;
 
             p {
-                padding-bottom: .7em;
+                padding-bottom: .8em;
                 a {
-                    color: #fff;
-                    font-size: 1.5rem;
+                    font-size: 1.2em;
+                    color: $bgColor;
                 }
             }
-
+            
             h2 {
                 text-transform: uppercase;
-                font-size: 2rem;
-                padding-bottom: 1em;
+                color: $bgColor;
+                padding-bottom: 1.5em;
+                font-size: 1.2em;
             }
 
             .arrow {
-                border: solid #fff;
-                border-width: 0 3px 3px 0;
+                border: solid $bgColor;
+                border-width: 0 5px 5px 0;
                 display: inline-block;
-                padding: 5px;
+                padding: 10px;
             }
               
               
@@ -155,7 +155,6 @@ body {
   }
 }
 
-
 @for $i from 1 to 6 {
     &.page-#{$i} {
         #pagination li:nth-of-type(#{$i}) {
@@ -165,12 +164,12 @@ body {
 }
 
 %active-dot {
-  transform: scale(2);
-  background-color: $lBlue;
+    transform: scale(2);
+    background-color: $lBlue;
 }
 
 /////////////////////
-// section box heading  ????? better naming
+// section box
 .section-box {
     position: relative;
     width: 100%;
@@ -178,10 +177,10 @@ body {
     overflow-y: hidden;
 
     .wrapper-inner {
-        h2.border-bottom {
+        h2.heading-border-bottom {
             position: relative;
             display: inline-block;
-            padding: 1.5em 0 .8em 0;
+            padding: 2.1em 0 0.7em;
             margin-bottom: 7rem;
 
             &::before {
@@ -293,18 +292,22 @@ body {
         flex: 1 1 calc(50% - .4em);
         margin: 0.1em;
         padding: .7em;
+        font-family: "Open Sans", sans-serif;
 
         img {
-            padding-bottom: 1.5em;
-        }
-
-        span {
-            display: flex;
-            color: $lBlue;
             padding-bottom: 1em;
         }
 
+        span {
+            font-size: 16px;
+            display: flex;
+            color: $lBlue;
+            padding-bottom: 1em;
+            font-style: italic;
+        }
+
         p {
+            font-size: 16px;
             color: $bgColor;
             padding-bottom: 5em;
         }
@@ -314,6 +317,7 @@ body {
                display: inline-block;
                color: $lBlue;
                padding: 0;
+               font-style: normal;
            }
         }
 
@@ -430,7 +434,7 @@ h2.advisor-top-header {
         .investors-confirmed {
 
             img {
-                padding-bottom: 1em;;
+                padding-bottom: 2em;
             }
         }
         
