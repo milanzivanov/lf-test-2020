@@ -15,23 +15,70 @@ html {
 
 
 // helper utilites classess
-
 .wrapper-inner {
     max-width: 1170px;
     margin: 0 auto;
 }
 
-.w-100 {    
-    width: 100%;
+.heading-h2-white {
+    color: $bgColor;
 }
 
-.w-50 {    
-    width: 50%;
+////////////////
+// mobile
+@include breakpoint(mobile) {
+
+    .custom-width {    
+        width: 100%;
+    }
+
+    .btn {
+        position: relative;
+        z-index: 5;
+        font-family: futurastd-light, sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        border: 2px solid $lBlue;
+        letter-spacing: 1px;
+        background-color: transparent;
+        padding: 1.2em 5.6em;
+        font-size: .8rem;
+        cursor: pointer;
+        overflow: hidden;
+
+
+    }
+    
+    .heading-h2 {
+        position: relative;
+        z-index: 5;
+        font-family: 'futura-condensedbold';
+        color: $h1-color;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
 }
 
-.w-50 {
-    width: 50%;
+@include breakpoint(large-desktop) {
+    .btn {
+        margin-right: .5em;
+    }
+
+    .heading-h2 {
+        font-size: 2.9rem;
+        text-align: start;
+        padding: 0 0 0 .5em;
+    }
+
+    .custom-width {    
+        width: 50%;
+    }
+
+
 }
+
 
 .pb-0 {
     padding-bottom: 0 !important;
@@ -53,30 +100,6 @@ img {
     height: auto;
 }
 
-// .btn {
-//     position: relative;
-//     z-index: 5;
-//     font-family: futurastd-light,sans-serif;
-//     color: #fff;
-//     text-transform: uppercase;
-//     border: 2px solid $lBlue;
-//     letter-spacing: 1px;
-//     background-color: transparent;
-//     padding: 1.2em 5.6em;
-//     font-size: .8rem;
-//     cursor: pointer;
-//     overflow: hidden;
-// }
-
-// .heading-h2 {
-//     position: relative;
-//     z-index: 5;
-//     font-family: 'futura-condensedbold';
-//     color: $h1-color;
-//     text-transform: uppercase;
-//     font-size: 2.9rem;
-// }
-
 .heading-h3 {
     font-family: 'futurastd-light', sans-serif;
     color: $lBlue;
@@ -95,66 +118,3 @@ img {
     height: 180px;
 }
 
-////////////////
-// mobile
-@include breakpoint(mobile) {
-
-    // .heading-h2-white {
-    //     color: $bgColor;
-    // }
-
-    .btn {
-        position: relative;
-        z-index: 5;
-        font-family: futurastd-light, sans-serif;
-        color: #fff;
-        text-transform: uppercase;
-        border: 2px solid $lBlue;
-        letter-spacing: 1px;
-        background-color: transparent;
-        padding: 1.2em 5.6em;
-        font-size: .8rem;
-        cursor: pointer;
-        overflow: hidden;
-    }
-    
-    .heading-h2 {
-        position: relative;
-        z-index: 5;
-        font-family: 'futura-condensedbold';
-        color: $h1-color;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-}
-
-@include breakpoint(large-desktop) {
-    .btn {
-        position: relative;
-        z-index: 5;
-        font-family: futurastd-light,sans-serif;
-        color: #fff;
-        text-transform: uppercase;
-        border: 2px solid $lBlue;
-        letter-spacing: 1px;
-        background-color: transparent;
-        padding: 1.2em 5.6em;
-        font-size: .8rem;
-        cursor: pointer;
-        overflow: hidden;
-    }
-
-    .heading-h2 {
-        position: relative;
-        z-index: 5;
-        font-family: 'futura-condensedbold';
-        color: $h1-color;
-        text-transform: uppercase;
-        font-size: 2.9rem;
-        text-align: start;
-    }
-
-
-}

@@ -12,11 +12,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-
+///////////////////////
+// mobile view start
 @include breakpoint(mobile) {
     // landing page 
     .main {
-
 
         .landing-page-container {
             position: relative;
@@ -64,7 +64,12 @@ body {
                 z-index: 5;
     
                 a.header-login__btn {
-    
+
+                    span {
+                        position: relative;
+                        z-index: 10;
+                    }
+
                     &::before {
                         position: absolute;
                         content: "";
@@ -75,7 +80,21 @@ body {
                         background-color: rgba(86,188,187,.8);
                         width: 50%;
                         height: 101%;
+                        transition: all .3s ease-in-out;
                     }
+
+                    &:hover::before {
+    
+                        width: 100%;
+                        height: 100%;
+                        -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
+                        clip-path: polygon(0 0,0 100%,100% 100%);
+
+                        // -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+                        // clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+                    }
+
                 }
     
             }
@@ -132,7 +151,6 @@ body {
         transform: translateY(-50%);
         right: 30px;
         list-style: none;
-        display: none;
     
         li {
             position: relative;
@@ -225,7 +243,7 @@ body {
                 font-size: 1rem;
                 color: $p-color;
                 line-height: 35px;
-                text-align: center;
+                text-align: justify;
             }
         }
     
@@ -383,7 +401,7 @@ body {
         }
     
         .advisors-box__item {
-            flex: 1 1 calc(50% - .6em);
+            flex: 1 1 calc(100% - .6em);
             margin: .3em;
             padding-bottom: 1em;
     
@@ -443,32 +461,44 @@ body {
             z-index: 5;
     
             .investors-confirmed {
-    
+                flex-direction: column;
+                @include flexCHV;
+                padding: .5em;
                 img {
                     padding-bottom: 2em;
                 }
             }
             
             .investors-in-talks {
-    
+                @include flexCHV;
+                flex-direction: column;
+                padding: .5em;
                 .investors-in-talks__box {
                     display: flex;
-                    padding-right: .5em;
+                    flex-direction: column;
                 }
             }
         }
-    
+        
         .investors-in-talks__box--item {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            padding-right: 1em;
+            padding-bottom: .5em;
         }
     }
 
 }
 
-/////////////////////////
+//////////////////////
+// tablet view start
+@include breakpoint(tablet) {
+    .about-us-item-container__item:nth-child(2) {
+        display: none;
+    }
+    .about-us-item-container__item:nth-child(3) {
+        display: none;
+    }
+}
+
+//////////////////////
 // lage desktops start
 @include breakpoint(large-desktop) {
 
@@ -510,21 +540,6 @@ body {
     
             header.header-login {
                 justify-content: flex-end;
-
-                // a.header-login__btn {
-    
-                //     &::before {
-                //         position: absolute;
-                //         content: "";
-                //         left: 0;
-                //         top: 0;
-                //         -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
-                //         clip-path: polygon(0 0,0 100%,100% 100%);
-                //         background-color: rgba(86,188,187,.8);
-                //         width: 50%;
-                //         height: 101%;
-                //     }
-                // }
     
             }
              
@@ -566,42 +581,6 @@ body {
     }
     
     ///////////////////
-    // scroll pagination
-    #pagination {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 30px;
-      list-style: none;
-      display: inline-block;
-    
-      li {
-        position: relative;
-        margin: 20px 0;
-        background-color: #f2f2f2;
-        border-radius: 100%;
-        width: 8px;
-        height: 8px;
-        transition: all .2s ease;
-    
-        &:hover {
-          transform: scale(1.5);
-        }
-    
-        a {
-          position: absolute;
-          text-decoration: none;  
-          left: 0;
-          top: 0;
-          color: inherit;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-    
-    
-    ///////////////////
     // section box
     .section-box {
         position: relative;
@@ -612,7 +591,7 @@ body {
         .wrapper-inner {
             h2.heading-border-bottom {
                 display: inline-block;
-                padding: 2.1em 0 0.7em;
+                padding: 2.1em 0 .7em .5em;
                 margin-bottom: 7rem;
     
                 &::before {
@@ -643,7 +622,6 @@ body {
     
         .about-us--item {
             flex: 1 1 50%;
-            padding: .5em;
     
             h2 {
                 padding-bottom: 1em;
@@ -798,7 +776,7 @@ body {
     
     h2.advisor-top-header {
         width: 70%;
-        padding: 0 0 1.5em 0;
+        padding: 0 0 1.5em .5em;
         text-align: start;
     }
     
@@ -835,6 +813,10 @@ body {
                 li {
                     color: #585c60;
                     font-size: 1.2rem;
+
+                    &:first-child {
+                        list-style: none;
+                    }
                 }
             }
     
@@ -876,6 +858,9 @@ body {
             z-index: 5;
     
             .investors-confirmed {
+
+                justify-content: flex-start;
+                align-items: flex-start;
     
                 img {
                     padding-bottom: 2em;
@@ -883,16 +868,19 @@ body {
             }
             
             .investors-in-talks {
+
+                align-items: flex-start;
+                justify-content: flex-start;
     
                 .investors-in-talks__box {
                     display: flex;
+                    flex-direction: row;
                     padding-right: .5em;
                 }
             }
         }
     
         .investors-in-talks__box--item {
-            display: flex;
             justify-content: flex-end;
             align-items: flex-end;
             padding-right: 1em;

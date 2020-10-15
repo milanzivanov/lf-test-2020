@@ -1,4 +1,6 @@
-$(document).ready(function() {
+// pagination on scroll
+jQuery(function() {
+
     'use strict';
 
     function pagination() {
@@ -22,7 +24,7 @@ $(document).ready(function() {
             break;
           default:
             $body.removeClass().addClass('page-1');
-         }
+          }
     }
       
     pagination();
@@ -35,9 +37,13 @@ $(document).ready(function() {
               scrollTop: $($.attr(this, 'href')).offset().top
           }, 500);
     });
-
-    
+  
 });
+  
 
 // animation on scroll
-AOS.init();
+AOS.init({
+  delay: 200,
+  duration: 1000,
+  once: false
+});
