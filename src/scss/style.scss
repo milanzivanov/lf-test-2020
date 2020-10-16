@@ -113,7 +113,7 @@ body {
                 p {
                     padding-bottom: .8em;
                     a {
-                        font-size: 1.2em;
+                        font-size: 1em;
                         color: $bgColor;
                     }
                 }
@@ -122,7 +122,7 @@ body {
                     text-transform: uppercase;
                     color: $bgColor;
                     padding-bottom: 1.5em;
-                    font-size: 1.2em;
+                    font-size: 1em;
                 }
                 
                 a {
@@ -533,7 +533,23 @@ body {
                 justify-content: flex-end;
             }
 
+            .more-info {
+                p {
+                    a {
+                        font-size: 1.2em;
+                        color: $bgColor;
+                    }
+                }
+                
+                h2 {
+                    font-size: 1.2em;
+                }
+                
+    
+    
+            }
         }
+
 
     }
 
