@@ -259,7 +259,7 @@ body {
         
         .about-us-item-container__item {
             flex: 1 1 calc(50% - 1.2em);
-            min-height: 150px;
+            height: 150px;
             max-width: 150px;
             margin: 0.3em;    
         }
@@ -585,8 +585,8 @@ body {
         
         .about-us-item-container__item {
             flex: 1 1 calc(50% - 1.2em);
-            min-height: 250px;
-            max-width: 250px;
+            height: 190px;
+            max-width: 190px;
             margin: 0.3em;
     
             display: flex;
@@ -605,12 +605,10 @@ body {
             display: none;
         }
 
-    
     }
     
     /////////////////////
     // our porfolio for lage desktops
-    
     .portfolio-box {
 
         .portfolio-box__item {
@@ -713,6 +711,21 @@ body {
         }
     }
 
+}
+
+
+//////////////////////
+// extra-large-desktop
+@include breakpoint(extra-large-desktop) {
+    .about-us-item-container {
+        
+        .about-us-item-container__item {
+            height: 250px;
+            max-width: 250px;
+        }
+    
+
+    }
 }
 
 
