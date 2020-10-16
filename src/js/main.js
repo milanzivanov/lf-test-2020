@@ -43,7 +43,7 @@ jQuery(function() {
 
 // animation on scroll
 AOS.init({
-  delay: 200,
-  duration: 1000,
+  delay: 100,
+  duration: 300,
   once: false
 });

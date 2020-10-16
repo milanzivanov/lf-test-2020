@@ -84,14 +84,10 @@ body {
                     }
 
                     &:hover::before {
-    
                         width: 100%;
                         height: 100%;
                         -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
                         clip-path: polygon(0 0,0 100%,100% 100%);
-
-                        // -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-                        // clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 
                     }
 
@@ -128,28 +124,34 @@ body {
                     padding-bottom: 1.5em;
                     font-size: 1.2em;
                 }
-    
-                .arrow {
-                    border: solid $bgColor;
-                    border-width: 0 5px 5px 0;
-                    display: inline-block;
-                    padding: 10px;
+                
+                a {
+                    
+                    .arrow {
+                        border: solid $bgColor;
+                        border-width: 0 5px 5px 0;
+                        display: inline-block;
+                        padding: 10px;
+                    }
+                    
+                    .down {
+                        transform-origin: center;
+                        transform: rotate(45deg);
+                    }
                 }
-                  
-                  
-                .down {
-                    transform: rotate(45deg);
-                }
+
             }
         }
     }
 
+    ///////////////////
     // pagination
     #pagination {
         position: fixed;
+        z-index: 11;
         top: 50%;
         transform: translateY(-50%);
-        right: 30px;
+        right: 20px;
         list-style: none;
     
         li {
@@ -192,7 +194,7 @@ body {
 
 
     /////////////////////
-    // section box
+    // section box 
     .section-box {
         position: relative;
         width: 100%;
@@ -220,9 +222,8 @@ body {
         }
     }
 
-
     //////////////////
-    // about us
+    // about us for mobile
     .about-us {
         padding-bottom: 1em;
     }
@@ -296,7 +297,7 @@ body {
     }
 
     /////////////////////
-    // our porfolio
+    // our porfolio for mobile
     .portfolio {
         position: relative;
         background: url("./../src/img/portfolio-bg-color.jpg");
@@ -347,7 +348,7 @@ body {
                }
             }
     
-            a.btn--first {
+            a.btn--hover {
                 position: relative;
                 &::before {
                     position: absolute;
@@ -359,8 +360,25 @@ body {
                     background-color: rgba(86,188,187,.8);
                     width: 50%;
                     height: 101%;
+                    transition: all .3s ease-in-out;
                 }
+
+                &:hover::before {
+                    width: 50%;
+                    height: 101%;
+                    -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
+                    clip-path: polygon(0 0,0 100%,100% 100%);
+                }
+
             }
+
+            a.btn--hover:hover span {
+                position: relative;
+                z-index: 11;
+                transition: all .3s ease-in-out;
+                color: white;
+            }
+
         }
     
     }
@@ -421,7 +439,12 @@ body {
                 li {
                     color: #585c60;
                     font-size: 1.2rem;
+
+                    &:first-child {
+                        list-style: none;
+                    }
                 }
+
             }
     
         }
@@ -440,7 +463,7 @@ body {
     }
 
     /////////////////////
-    // our investors mobile
+    // our investors for mobile
     .investors {
         position: relative;
         background: url("./../src/img/investors-bg.jpg");
@@ -505,116 +528,34 @@ body {
     .main {
     
         .landing-page-container {
-            position: relative;
-            background: url("./../src/img/landingPage.jpg");
-            background: url("./../src/img/landingPage.webp");
-            background-size: cover;
-            height: 100vh;
-    
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-    
-            &::before {
-                position: absolute;
-                content: '';
-                clip-path: polygon(0 0, 0% 100%, 100% 100%);
-                background-color: rgba(86, 188, 187, 0.8);
-                width: 100%;
-                height: 100%;
-            }
-            
-            &::after {
-                position: absolute;
-                content: '';
-                background-color: rgba(18, 32, 45, 0.6);
-                width: 100%;
-                height: 100%;
-            
-            }
-    
-            .wrapper-inner {
-                width: 100%;
-            }
     
             header.header-login {
                 justify-content: flex-end;
-    
             }
-             
-            h1.main-heading {
-                position: relative;
-                z-index: 5;
-                padding: 0 1.5em;
-            }
-    
-            .more-info {
-                p {
-                    padding-bottom: .8em;
-                    a {
-                        font-size: 1.2em;
-                        color: $bgColor;
-                    }
-                }
-                
-                h2 {
-                    text-transform: uppercase;
-                    color: $bgColor;
-                    padding-bottom: 1.5em;
-                    font-size: 1.2em;
-                }
-    
-                .arrow {
-                    border: solid $bgColor;
-                    border-width: 0 5px 5px 0;
-                    display: inline-block;
-                    padding: 10px;
-                }
-                  
-                  
-                .down {
-                    transform: rotate(45deg);
-                }
-            }
+
         }
+
     }
-    
+
     ///////////////////
     // section box
     .section-box {
-        position: relative;
-        width: 100%;
-        background-color: $bgColor;
-        overflow-y: hidden;
     
         .wrapper-inner {
             h2.heading-border-bottom {
                 display: inline-block;
                 padding: 2.1em 0 .7em .5em;
-                margin-bottom: 7rem;
-    
-                &::before {
-                    position: absolute;
-                    content: "";
-                    bottom: 0;
-                    right: 0;
-                    height: 5px;
-                    background-color: $lBlue;
-                    width: 1000px;
-                }
             }
         }
     }
 
     //////////////////
-    // about us
+    // about us for lage desktops 
     .about-us {
         padding-bottom: 6em;
     }
     
     .about-us__box {
-        display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
@@ -639,14 +580,9 @@ body {
     }
     
     .about-us-item-container {
-        display: flex;
         justify-content: flex-end;
-        align-items: center;
-        width: 100%;
-        flex-wrap: wrap;
-    
         transform: rotate(45deg);
-    
+        
         .about-us-item-container__item {
             flex: 1 1 calc(50% - 1.2em);
             min-height: 250px;
@@ -664,47 +600,19 @@ body {
             position: relative;
             transform: rotate(-360deg);
     
-            &::before {
-                position: absolute;
-                content: '';
-                background-color: rgba(18, 32, 45,  0.4);
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-        }
-        .about-us-item-container__item:first-child {
-            background: url("./../src/img/notes.jpg");
-            background-size: cover;
-        }
-        .about-us-item-container__item:nth-child(2) {
-            background-color: $lBlue;
         }
         .about-us-item-container__item:nth-child(3) {
             display: none;
         }
-        .about-us-item-container__item:last-child {
-            background: url("./../src/img/business.jpg");
-            background-size: cover;
-        }
+
     
     }
     
     /////////////////////
-    // our porfolio
-    .portfolio {
-        position: relative;
-        background: url("./../src/img/portfolio-bg-color.jpg");
-        background: url("./../src/img/portfolio-bg-color.webp");
-        background-size: cover;
-    }
+    // our porfolio for lage desktops
     
     .portfolio-box {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    
+
         .portfolio-box__item {
             flex: 1 1 calc(50% - 0.4em);
             justify-content: flex-end;
@@ -712,22 +620,6 @@ body {
     
             img {
                 padding-bottom: 1em;
-            }
-    
-            span {
-                font-size: 16px;
-                display: flex;
-                color: $lBlue;
-                padding-bottom: 1em;
-                font-style: italic;
-            }
-    
-            p {
-                font-size: 16px;
-                color: $bgColor;
-                padding-bottom: 5em;
-                width: 80%;
-                text-align: start;
             }
     
             a.btn {
@@ -739,41 +631,20 @@ body {
                }
             }
     
-            a.btn--first {
-                position: relative;
-                &::before {
-                    position: absolute;
-                    content: "";
-                    left: 0;
-                    top: 0;
-                    -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
-                    clip-path: polygon(0 0,0 100%,100% 100%);
-                    background-color: rgba(86,188,187,.8);
-                    width: 50%;
-                    height: 101%;
-                }
-            }
         }
     
     }
     
     .portfolio-box-bottom {
-    
-        width: 100%;
-        padding: 5em 0;
+            padding: 5em 0;
     
         h2 {
             width: 70%;
-            text-align: center;
         }
     }
     
     /////////////////////
-    // our advisors
-    .advisors {
-        position: relative;
-    }
-    
+    // our advisors for lage desktops
     h2.advisor-top-header {
         width: 70%;
         padding: 0 0 1.5em .5em;
@@ -781,11 +652,8 @@ body {
     }
     
     .advisors-box {
-        display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
-        width: 100%;
-        padding: 0 0 3em 0;
+
     
         h2 {
             text-transform: uppercase;
@@ -795,41 +663,15 @@ body {
     
         .advisors-box__item {
             flex: 1 1 calc(50% - .6em);
-            margin: .3em;
             padding-bottom: 2em;
-    
-            display: flex;
-            align-items: center;
             flex-direction: row;
-    
-            ul {
-                padding: 1em 0 1em 2em;
-                list-style-type: disc;
-                h3 {
-                    font-size: 1.3rem;
-                    color: $lBlue;
-                }
-    
-                li {
-                    color: #585c60;
-                    font-size: 1.2rem;
-
-                    &:first-child {
-                        list-style: none;
-                    }
-                }
-            }
-    
         }
         
         .advisors-box__item:last-child {
-            display: flex;
             justify-content: flex-end;
             align-items: flex-end;
-            padding-bottom: 0;
             h2 {
                 text-align: end;
-                padding: 0;
             }
         }
     
@@ -837,25 +679,10 @@ body {
     
     
     /////////////////////
-    // our investors
+    // our investors for lage desktops
     .investors {
-        position: relative;
-        background: url("./../src/img/investors-bg.jpg");
-        background-size: cover;
-    
-        &::before {
-            position: absolute;
-            content: "";
-            left: 0;
-            top: 0;
-            background-color: rgba(18, 32, 45, 0.8);
-            width: 100%;
-            height: 100%;
-        }
     
         .investors-box {
-            position: relative;
-            z-index: 5;
     
             .investors-confirmed {
 
@@ -873,7 +700,6 @@ body {
                 justify-content: flex-start;
     
                 .investors-in-talks__box {
-                    display: flex;
                     flex-direction: row;
                     padding-right: .5em;
                 }
@@ -887,8 +713,6 @@ body {
         }
     }
 
-
 }
-
 
 
