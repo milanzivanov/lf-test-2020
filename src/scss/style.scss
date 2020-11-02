@@ -8,348 +8,67 @@
 @import "footer";
 
 body {
-    font-size: 25px;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+    color: #222C2A;  
     font-family: 'Open Sans', sans-serif;
 }
 
-///////////////////////
-// mobile view start
-@include breakpoint(mobile) {
-    // landing page 
-    .main {
+// landing page 
+.main {
 
-        .landing-page-container {
-            position: relative;
-            background: url("./../src/img/landingPage.jpg");
-            background: url("./../src/img/landingPage.webp");
-            background-size: cover;
-            height: 100vh;
-    
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-    
-            &::before {
-                position: absolute;
-                content: '';
-                clip-path: polygon(0 0, 0% 100%, 100% 100%);
-                background-color: rgba(86, 188, 187, 0.8);
-                width: 100%;
-                height: 100%;
-            }
-            
-            &::after {
-                position: absolute;
-                content: '';
-                background-color: rgba(18, 32, 45, 0.6);
-                width: 100%;
-                height: 100%;
-            
-            }
-    
-            .wrapper-inner {
-                width: 100%;
-            }
-    
-            header.header-login {
-                position: relative;
-                width: 100%;
-                padding: 1em 0;
-    
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                
-                z-index: 5;
-    
-                a.header-login__btn {
-
-                    span {
-                        position: relative;
-                        z-index: 10;
-                    }
-
-                    &::before {
-                        position: absolute;
-                        content: "";
-                        left: 0;
-                        top: 0;
-                        -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
-                        clip-path: polygon(0 0,0 100%,100% 100%);
-                        background-color: rgba(86,188,187,.8);
-                        width: 50%;
-                        height: 101%;
-                        transition: all .3s ease-in-out;
-                    }
-
-                    &:hover::before {
-                        width: 100%;
-                        height: 100%;
-                        -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
-                        clip-path: polygon(0 0,0 100%,100% 100%);
-
-                    }
-
-                }
-    
-            }
-             
-            h1.main-heading {
-                position: relative;
-                z-index: 5;
-                padding: 0 1.5em;
-            }
-    
-            .more-info {
-                position: relative;
-                z-index: 5;
-                padding-bottom: 1em;
-                font-family: 'futura-condensedbold', sans-serif;
-    
-                @include flexCHV;
-                flex-direction: column;
-    
-                p {
-                    padding-bottom: .8em;
-                    a {
-                        font-size: 1em;
-                        color: $bgColor;
-                    }
-                }
-                
-                h2 {
-                    text-transform: uppercase;
-                    color: $bgColor;
-                    padding-bottom: 1.5em;
-                    font-size: 1em;
-                }
-                
-                a {
-                    
-                    .arrow {
-                        border: solid $bgColor;
-                        border-width: 0 5px 5px 0;
-                        display: inline-block;
-                        padding: 10px;
-                    }
-                    
-                    .down {
-                        transform-origin: center;
-                        transform: rotate(45deg);
-                    }
-                }
-
-            }
-        }
-    }
-
-    ///////////////////
-    // pagination
-    #pagination {
-        position: fixed;
-        z-index: 11;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 20px;
-        list-style: none;
-    
-        li {
-            position: relative;
-            margin: 20px 0;
-            background-color: #f2f2f2;
-            border-radius: 100%;
-            width: 8px;
-            height: 8px;
-            transition: all .2s ease;
-    
-            &:hover {
-                transform: scale(1.5);
-            }
-
-            a {
-                position: absolute;
-                text-decoration: none;  
-                left: 0;
-                top: 0;
-                color: inherit;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-    
-    @for $i from 1 to 6 {
-        &.page-#{$i} {
-            #pagination li:nth-of-type(#{$i}) {
-                @extend %active-dot;
-            }
-        }
-    }
-    
-    %active-dot {
-        transform: scale(2);
-        background-color: $lBlue;
-    }
-
-
-    /////////////////////
-    // section box 
-    .section-box {
+    .landing-page-container {
         position: relative;
-        width: 100%;
-        background-color: $bgColor;
-        overflow-y: hidden;
+        background: url("./../src/img/landingPage.jpg");
+        background: url("./../src/img/landingPage.webp");
+        background-size: cover;
+        height: 100vh;
 
-        .wrapper-inner {
-            h2.heading-border-bottom {
-                position: relative;
-                display: block;
-                padding: 1em;
-                margin-bottom: 1rem;
-
-
-                &::before {
-                    position: absolute;
-                    content: "";
-                    bottom: 0;
-                    right: 0;
-                    height: 3px;
-                    background-color: $lBlue;
-                    width: 1000px;
-                }
-            }
-        }
-    }
-
-    //////////////////
-    // about us for mobile
-    .about-us {
-        padding-bottom: 1em;
-    }
-    
-    .about-us__box {
         display: flex;
         flex-direction: column;
-    
-        .about-us--item {
-            flex: 1 1 100%;
-            padding: .5em;
-    
-            h2 {
-                padding-bottom: 1em;
-            }
-    
-            p {
-                font-size: 1rem;
-                color: $p-color;
-                line-height: 35px;
-                text-align: justify;
-            }
-        }
-    
-    }
-    
-    .about-us-item-container {
-        display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        width: 100%;
-        flex-wrap: wrap;
+
+        &::before {
+            position: absolute;
+            content: '';
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            background-color: rgba(86, 188, 187, 0.8);
+            width: 100%;
+            height: 100%;
+        }
         
-        .about-us-item-container__item {
-            flex: 1 1 calc(50% - 1.2em);
-            height: 150px;
-            max-width: 150px;
-            margin: 0.3em;    
+        &::after {
+            position: absolute;
+            content: '';
+            background-color: rgba(18, 32, 45, 0.6);
+            width: 100%;
+            height: 100%;
+        
         }
-    
-        .about-us-item-container__item:first-child,
-        .about-us-item-container__item:last-child {
+
+        .wrapper-inner {
+            width: 100%;
+        }
+
+        header.header-login {
             position: relative;
-            transform: rotate(-360deg);
-    
-            &::before {
-                position: absolute;
-                content: '';
-                background-color: rgba(18, 32, 45,  0.4);
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-        }
-        .about-us-item-container__item:first-child {
-            background: url("./../src/img/notes.jpg");
-            background-size: cover;
-        }
-        .about-us-item-container__item:nth-child(2) {
-            background-color: $lBlue;
-        }
-        .about-us-item-container__item:nth-child(3) {
-            background-color: $lBlue;
-        }
-        .about-us-item-container__item:last-child {
-            background: url("./../src/img/business.jpg");
-            background-size: cover;
-        }
-    
-    }
+            width: 100%;
+            padding: 1em 0;
 
-    /////////////////////
-    // our porfolio for mobile
-    .portfolio {
-        position: relative;
-        background: url("./../src/img/portfolio-bg-color.jpg");
-        background: url("./../src/img/portfolio-bg-color.webp");
-        background-size: cover;
-    }
-    
-    .portfolio-box {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    
-        .portfolio-box__item {
-            flex: 1 1 calc(100% - .4em);
-            margin: 0.1em;
-            padding: .7em;
-            font-family: "Open Sans", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            z-index: 5;
 
-            flex-direction: column;
-            @include flexCHV;
-    
-            img {
-                padding-bottom: 1em;
-            }
-    
-            span {
-                font-size: 16px;
-                display: flex;
-                color: $lBlue;
-                padding-bottom: 1em;
-                font-style: italic;
-                justify-content: center;
-            }
-    
-            p {
-                font-size: 16px;
-                color: $bgColor;
-                padding-bottom: 5em;
-                text-align: center;
-            }
-    
-            a.btn {
-               span {
-                   display: inline-block;
-                   color: $lBlue;
-                   padding: 0;
-                   font-style: normal;
-               }
-            }
-    
-            a.btn--hover {
-                position: relative;
+            a.header-login__btn {
+
+                span {
+                    position: relative;
+                    z-index: 10;
+                }
+
                 &::before {
                     position: absolute;
                     content: "";
@@ -364,384 +83,571 @@ body {
                 }
 
                 &:hover::before {
-                    width: 50%;
-                    height: 101%;
+                    width: 100%;
+                    height: 100%;
                     -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
                     clip-path: polygon(0 0,0 100%,100% 100%);
                 }
 
-            }
-
-            a.btn--hover:hover span {
-                position: relative;
-                z-index: 11;
-                transition: all .3s ease-in-out;
-                color: white;
-            }
-
-        }
-    
-    }
-    
-    .portfolio-box-bottom {
-    
-        width: 100%;
-        padding: 3em 0;
-    
-        h2 {
-            text-align: center;
-        }
-    }
-
-
-    /////////////////////
-    // our advisors for mobile
-    .advisors {
-        position: relative;
-    }
-    
-    h2.advisor-top-header {
-        width: 100%;
-        padding: 0 0 1.5em 0;
-    }
-    
-    .advisors-box {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        padding: 0 0 3em 0;
-        flex-direction: column;
-    
-        h2 {
-            text-transform: uppercase;
-            color: $h1-color;
-            padding-bottom: 2em;
-        }
-    
-        .advisors-box__item {
-            flex: 1 1 calc(100% - .6em);
-            margin: .3em;
-            padding-bottom: 1em;
-    
-            display: flex;
-            align-items: center;
-
-            flex-direction: column;
-    
-            ul {
-                padding: 1em 0 1em 2em;
-                list-style-type: disc;
-                h3 {
-                    font-size: 1.3rem;
-                    color: $lBlue;
-                }
-    
-                li {
-                    color: #585c60;
-                    font-size: 1.2rem;
-
-                    &:first-child {
-                        list-style: none;
-                    }
+                &:hover {
+                    color: black;
+                    font-weight: bold;
                 }
 
             }
-    
-        }
-        
-        .advisors-box__item:last-child {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 0;
-            h2 {
-                text-align: center;
-                padding: 0;
-            }
-        }
-    
-    }
 
-    /////////////////////
-    // our investors for mobile
-    .investors {
-        position: relative;
-        background: url("./../src/img/investors-bg.jpg");
-        background-size: cover;
-    
-        &::before {
-            position: absolute;
-            content: "";
-            left: 0;
-            top: 0;
-            background-color: rgba(18, 32, 45, 0.8);
-            width: 100%;
-            height: 100%;
         }
-    
-        .investors-box {
+            
+        h1.main-heading {
             position: relative;
             z-index: 5;
-    
-            .investors-confirmed {
-                flex-direction: column;
-                @include flexCHV;
-                padding: .5em;
-                img {
-                    padding-bottom: 2em;
+            padding: 0 1.5em;
+        }
+
+        .more-info {
+            position: relative;
+            z-index: 5;
+            padding-bottom: 1em;
+            font-family: 'futura-condensedbold', sans-serif;
+
+            @include flexCHV;
+            flex-direction: column;
+
+            p {
+                padding-bottom: .8em;
+                a {
+                    font-size: 1em;
+                    color: $bgColor;
                 }
             }
             
-            .investors-in-talks {
-                @include flexCHV;
-                flex-direction: column;
-                padding: .5em;
-                .investors-in-talks__box {
-                    display: flex;
-                    flex-direction: column;
+            h2 {
+                text-transform: uppercase;
+                color: $bgColor;
+                padding-bottom: 1.5em;
+                font-size: 1em;
+            }
+            
+            a {
+                
+                .arrow {
+                    border: solid $bgColor;
+                    border-width: 0 5px 5px 0;
+                    display: inline-block;
+                    padding: 10px;
                 }
+                
+                .down {
+                    transform-origin: center;
+                    transform: rotate(45deg);
+                }
+            }
+
+        }
+    }
+}
+
+///////////////////
+// pagination
+#pagination {
+    position: fixed;
+    z-index: 11;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    list-style: none;
+
+    li {
+        position: relative;
+        margin: 20px 0;
+        background-color: #f2f2f2;
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+        transition: all .2s ease;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+
+        a {
+            position: absolute;
+            text-decoration: none;  
+            left: 0;
+            top: 0;
+            color: inherit;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+    
+@for $i from 1 to 6 {
+    &.page-#{$i} {
+        #pagination li:nth-of-type(#{$i}) {
+            @extend %active-dot;
+        }
+    }
+}
+
+%active-dot {
+    transform: scale(2);
+    background-color: $lBlue;
+}
+
+
+/////////////////////
+// section box 
+.section-box {
+    position: relative;
+    width: 100%;
+    background-color: $bgColor;
+    overflow-y: hidden;
+
+    .wrapper-inner {
+        h2.heading-border-bottom {
+            position: relative;
+            display: block;
+            padding: 1em;
+            margin-bottom: 1rem;
+
+
+            &::before {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                right: 0;
+                height: 3px;
+                background-color: $lBlue;
+                width: 1000px;
+            }
+        }
+    }
+}
+
+//////////////////
+// about us
+.about-us {
+    padding-bottom: 1em;
+}
+
+.about-us__box {
+    display: flex;
+    flex-direction: column;
+
+    .about-us--item {
+        flex: 1 1 100%;
+        padding: .5em;
+
+        h2 {
+            padding-bottom: 1em;
+        }
+
+        p {
+            font-size: 1rem;
+            color: $p-color;
+            line-height: 35px;
+            text-align: justify;
+        }
+    }
+
+}
+
+.about-us-item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    
+    .about-us-item-container__item {
+        flex: 1 1 calc(50% - 1.2em);
+        height: 160px;
+        max-width: 160px;
+        margin: 0.3em;    
+    }
+
+    .about-us-item-container__item:first-child,
+    .about-us-item-container__item:last-child {
+        position: relative;
+        transform: rotate(-360deg);
+
+        &::before {
+            position: absolute;
+            content: '';
+            background-color: rgba(18, 32, 45,  0.4);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    .about-us-item-container__item:first-child {
+        background: url("./../src/img/notes.jpg");
+        background-size: cover;
+    }
+    .about-us-item-container__item:nth-child(2) {
+        background-color: $lBlue;
+    }
+    .about-us-item-container__item:nth-child(3) {
+        background-color: $lBlue;
+    }
+    .about-us-item-container__item:last-child {
+        background: url("./../src/img/business.jpg");
+        background-size: cover;
+    }
+
+}
+
+/////////////////////
+// our porfolio for mobile
+.portfolio {
+    position: relative;
+    background: url("./../src/img/portfolio-bg-color.jpg");
+    background: url("./../src/img/portfolio-bg-color.webp");
+    background-size: cover;
+}
+
+.portfolio-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .portfolio-box__item {
+        flex: 1 1 calc(50% - .4em);
+        margin: 0.1em;
+        padding: .7em;
+        font-family: "Open Sans", sans-serif;
+
+        flex-direction: column;
+        @include flexCHV;
+
+        img {
+            padding-bottom: 1em;
+        }
+
+        span {
+            font-size: 16px;
+            display: flex;
+            color: $lBlue;
+            padding-bottom: 1em;
+            font-style: italic;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 16px;
+            color: $bgColor;
+            padding-bottom: 5em;
+            text-align: center;
+        }
+
+        a.btn {
+            span {
+                display: inline-block;
+                color: $lBlue;
+                padding: 0;
+                font-style: normal;
+            }
+        }
+
+        a.btn--hover {
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
+                clip-path: polygon(0 0,0 100%,100% 100%);
+                background-color: rgba(86,188,187,.8);
+                width: 50%;
+                height: 101%;
+                transition: all .3s ease-in-out;
+            }
+
+            &:hover::before {
+                width: 50%;
+                height: 101%;
+                -webkit-clip-path: polygon(0 0,0 100%,100% 100%);
+                clip-path: polygon(0 0,0 100%,100% 100%);
+            }
+
+        }
+
+        a.btn--hover:hover span {
+            position: relative;
+            z-index: 11;
+            transition: all .3s ease-in-out;
+            color: white;
+        }
+
+    }
+
+}
+
+.portfolio-box-bottom {
+
+    width: 100%;
+    padding: 3em 0;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+
+/////////////////////
+// our advisors for mobile
+.advisors {
+    position: relative;
+}
+
+h2.advisor-top-header {
+    width: 100%;
+    padding: 0 0 1.5em 0;
+}
+
+.advisors-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 0 3em 0;
+    flex-direction: column;
+
+    h2 {
+        text-transform: uppercase;
+        color: $h1-color;
+        padding-bottom: 2em;
+    }
+
+    .advisors-box__item {
+        flex: 1 1 calc(100% - .6em);
+        margin: .3em;
+        padding-bottom: 1em;
+
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+
+        ul {
+            padding: 1em 0 1em 2em;
+            list-style-type: disc;
+            h3 {
+                font-size: 1.3rem;
+                color: $lBlue;
+            }
+
+            li {
+                color: #585c60;
+                font-size: 1.2rem;
+
+                &:first-child {
+                    list-style: none;
+                }
+            }
+
+        }
+
+    }
+    
+    .advisors-box__item:last-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 0;
+        h2 {
+            text-align: center;
+            padding: 0;
+        }
+    }
+
+}
+
+/////////////////////
+// our investors
+.investors {
+    position: relative;
+    background: url("./../src/img/investors-bg.jpg");
+    background-size: cover;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background-color: rgba(18, 32, 45, 0.8);
+        width: 100%;
+        height: 100%;
+    }
+
+    .investors-box {
+        position: relative;
+        z-index: 5;
+
+        .investors-confirmed {
+            flex-direction: column;
+            @include flexCHV;
+            padding: .5em;
+            img {
+                padding-bottom: 2em;
             }
         }
         
-        .investors-in-talks__box--item {
-            padding-bottom: .5em;
+        .investors-in-talks {
+            @include flexCHV;
+            flex-direction: column;
+            padding: .5em;
+            .investors-in-talks__box {
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
-
-}
-
-//////////////////////
-// tablet view start
-@include breakpoint(tablet) {
-    .about-us-item-container__item:nth-child(2) {
-        display: none;
-    }
-    .about-us-item-container__item:nth-child(3) {
-        display: none;
+    
+    .investors-in-talks__box--item {
+        padding-bottom: .5em;
     }
 }
 
-//////////////////////
-// lage desktops start
+////////////////////////
+// desktop
+@include breakpoint(desktop) {
+    .about-us-item-container {
+        
+        .about-us-item-container__item {
+            flex: 1 1 calc(50% - 1.2em);
+            height: 150px;
+            max-width: 150px;
+            
+        }
+        .about-us-item-container__item:nth-child(2) {
+            display: none;
+        }
+        .about-us-item-container__item:nth-child(3) {
+            display: none;
+        }
+    }
+}
+
+
+////////////////////////
+// large desktop
 @include breakpoint(large-desktop) {
-
     .main {
-    
         .landing-page-container {
-    
             header.header-login {
                 justify-content: flex-end;
             }
-
-            .more-info {
-                p {
-                    a {
-                        font-size: 1.2em;
-                        color: $bgColor;
-                    }
-                }
-                
-                h2 {
-                    font-size: 1.2em;
-                }
-                
-    
-    
-            }
         }
-
-
     }
 
-    ///////////////////
-    // section box
     .section-box {
-    
         .wrapper-inner {
             h2.heading-border-bottom {
                 display: inline-block;
                 padding: 2.1em 0 .7em .5em;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    right: 0;
+                    height: 3px;
+                    background-color: #56bcbb;
+                    width: 1000px;
+                }
+            }
+
+            .heading-h2 {
+                font-size: 2.9rem;
+                text-align: start;
+                padding: 0;
             }
         }
-    }
+    }  
 
-    //////////////////
-    // about us for lage desktops 
     .about-us {
         padding-bottom: 6em;
     }
-    
+
     .about-us__box {
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
 
-    
         .about-us--item {
             flex: 1 1 50%;
-    
+
             h2 {
                 padding-bottom: 1em;
                 text-align: start;
             }
-    
-            p {
-                font-size: 1rem;
-                color: $p-color;
-                line-height: 35px;
-                text-align: start;
-            }
         }
-    
     }
-    
+
     .about-us-item-container {
         justify-content: flex-end;
         transform: rotate(45deg);
         
         .about-us-item-container__item {
             flex: 1 1 calc(50% - 1.2em);
-            height: 190px;
-            max-width: 190px;
-            margin: 0.3em;
-    
-            display: flex;
-            justify-content: center;
-            align-items: center;
-    
+            height: 200px;
+            max-width: 200px;
+            
         }
-    
-        .about-us-item-container__item:first-child,
-        .about-us-item-container__item:last-child {
-            position: relative;
-            transform: rotate(-360deg);
-    
+        .about-us-item-container__item:nth-child(2) {
+            background-color: #56bcbb;
+            display: flex;
         }
         .about-us-item-container__item:nth-child(3) {
             display: none;
         }
+    }
 
-    }
-    
-    /////////////////////
-    // our porfolio for lage desktops
-    .portfolio-box {
 
-        .portfolio-box__item {
-            flex: 1 1 calc(50% - 0.4em);
-            justify-content: flex-end;
-            align-items: flex-start;
-    
-            img {
-                padding-bottom: 1em;
-            }
-    
-            a.btn {
-               span {
-                   display: inline-block;
-                   color: $lBlue;
-                   padding: 0;
-                   font-style: normal;
-               }
-            }
-    
-        }
-    
-    }
-    
-    .portfolio-box-bottom {
-            padding: 5em 0;
-    
-        h2 {
-            width: 70%;
-        }
-    }
-    
-    /////////////////////
-    // our advisors for lage desktops
-    h2.advisor-top-header {
-        width: 70%;
-        padding: 0 0 1.5em .5em;
-        text-align: start;
-    }
-    
     .advisors-box {
         flex-direction: row;
 
-    
-        h2 {
-            text-transform: uppercase;
-            color: $h1-color;
-            padding-bottom: 2em;
-        }
-    
         .advisors-box__item {
-            flex: 1 1 calc(50% - .6em);
-            padding-bottom: 2em;
+            flex: 1 1 calc(50% - 0.6em);
             flex-direction: row;
         }
-        
-        .advisors-box__item:last-child {
-            justify-content: flex-end;
-            align-items: flex-end;
-            h2 {
-                text-align: end;
-            }
-        }
-    
     }
-    
-    
-    /////////////////////
-    // our investors for lage desktops
+
+
     .investors {
-    
         .investors-box {
-    
-            .investors-confirmed {
-
-                justify-content: flex-start;
-                align-items: flex-start;
-    
-                img {
-                    padding-bottom: 2em;
-                }
-            }
-            
+            .investors-confirmed,
             .investors-in-talks {
-
                 align-items: flex-start;
-                justify-content: flex-start;
-    
-                .investors-in-talks__box {
-                    flex-direction: row;
-                    padding-right: .5em;
-                }
+                padding: 1em;
             }
         }
-    
-        .investors-in-talks__box--item {
-            justify-content: flex-end;
-            align-items: flex-end;
-            padding-right: 1em;
+
+        .wrapper-inner {
+            .custom-width {
+                width: 50%;
+                margin: 0;
+                padding: .5em;
+            }
         }
     }
+
 
 }
 
-
-//////////////////////
-// extra-large-desktop
+////////////////////////
+// extra large desktop
 @include breakpoint(extra-large-desktop) {
     .about-us-item-container {
         
         .about-us-item-container__item {
+            flex: 1 1 calc(50% - 1.2em);
             height: 250px;
             max-width: 250px;
+            
         }
-    
-
     }
 }
-
 

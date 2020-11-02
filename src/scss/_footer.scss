@@ -1,18 +1,15 @@
-@include breakpoint(mobile) {
-    footer {
-        @include flexCHV;
-        font-family: 'Open Sans', sans-serif;
-        padding: 3em 0;
-        background-color: $lBlue;
-        color: $bgColor;
-        font-size: .45em;
-    }
+footer {
+    @include flexCHV;
+    font-family: 'Open Sans', sans-serif;
+    padding: 3em 0;
+    background-color: $lBlue;
+    color: $bgColor;
+    font-size: .45em;
 }
 
-@include breakpoint(large-desktop) {
+@include breakpoint(desktop) {
     footer {
         padding: 1em 0;
         font-size: .55em;
-
     }
 }
