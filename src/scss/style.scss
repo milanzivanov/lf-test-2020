@@ -202,7 +202,7 @@ body {
     position: relative;
     width: 100%;
     background-color: $bgColor;
-    overflow-y: hidden;
+    overflow: hidden;
 
     .wrapper-inner {
         h2.heading-border-bottom {
